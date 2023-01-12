@@ -1,6 +1,6 @@
 from pydantic import BaseSettings
 
-from core.constants import PROJECT_ROOT_DIR
+from src.core.constants import PROJECT_ROOT_DIR
 
 
 class MysqlConfig(BaseSettings):
@@ -18,6 +18,8 @@ class MysqlConfig(BaseSettings):
         env_file = PROJECT_ROOT_DIR / '.env'
         env_file_encoding = 'utf-8'
 
+
+mysql_config: MysqlConfig = MysqlConfig()
 
 if __name__ == '__main__':
     config = MysqlConfig()
